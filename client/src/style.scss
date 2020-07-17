@@ -1,0 +1,60 @@
+.main__title {
+    font: 200% Segoe UI, sans-serif;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    position: absolute;
+    transform: translate(-50%, -100%);
+}
+
+.container {
+    width: 100%;
+    height: 15%;
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0 0 25px rgba(172, 170, 170, 0.5);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.mode__item {
+    display: inline-flex;
+    margin: 0.5em -2em 0 0.5em;
+}
+
+.mode__item__allvoicesspan {
+    left: -70px;
+}
+
+.mode__item__microphonespan {
+    left: -60px;
+}
+
+.mode__item__streamspan {
+    left: -55px;
+}
+
+.record {
+    margin: 3rem;
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+}
+
+label {
+    color: black;
+    font-size: 50px;
+}
+
+label>span {
+    font-size: 14px;
+    position: relative;
+    top: 33px;
+    font-family: Segoe UI, sans-serif;
+}
+
+input[type="radio"]:checked+label {
+    color: #c7cac5;
+}

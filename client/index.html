@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speaker</title>
+</head>
+
+<style>
+  .main__title {
+    font: 200% Segoe UI, sans-serif;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    position: absolute;
+    transform: translate(-50%, -100%);
+  }
+
+  .container {
+    width: 100%;
+    height: 15%;
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0 0 25px rgba(172, 170, 170, 0.5);
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .mode__item {
+    display: inline-flex;
+    margin: 0.5em -2em 0 0.5em;
+  }
+
+  .mode__item__allvoicesspan {
+    left: -70px;
+  }
+
+  .mode__item__microphonespan {
+    left: -60px;
+  }
+
+  .mode__item__streamspan {
+    left: -55px;
+  }
+
+  .record {
+    margin: 3rem;
+  }
+
+  input[type="radio"] {
+    -webkit-appearance: none;
+  }
+
+  label {
+    color: black;
+    font-size: 50px;
+  }
+
+  label>span {
+    font-size: 14px;
+    position: relative;
+    top: 33px;
+    font-family: Segoe UI, sans-serif;
+  }
+
+  input[type="radio"]:checked+label {
+    color: #c7cac5;
+  }
+</style>
+
+<body>
+  <section class="main">
+    <div class="main__title" id="response"></div>
+  </section>
+  <section class="mode">
+    <div class="container">
+      <div class="mode__item">
+
+        <div class="mode__item__allvoices">
+          <input type="radio" name="icon" id="voices" />
+          <label for="voices">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+            <span class="mode__item__allvoicesspan">All voices</span>
+          </label>
+        </div>
+
+        <div class="mode__item__microphone">
+          <input type="radio" name="icon" id="microphone" />
+          <label for="microphone">
+            <i class="fa fa-microphone" aria-hidden="true"></i>
+            <span class="mode__item__microphonespan">Microphone</span>
+          </label>
+        </div>
+
+        <div class="mode__item__stream">
+          <input type="radio" name="icon" id="stream" />
+          <label for="stream">
+            <i class="fa fa-play-circle" aria-hidden="true"></i>
+            <span class="mode__item__streamspan">Stream</span>
+          </label>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://use.fontawesome.com/22e6e4aa8b.js"></script>
+  <script src="./dist/app.js"></script>
+
+</body>
+
+</html>
