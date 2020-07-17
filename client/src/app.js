@@ -1,5 +1,7 @@
 var io = require("socket.io-client");
-var socket = io.connect("https://voicy-speaker.herokuapp.com/");
+const heroku = 'https://voicy-speaker.herokuapp.com/';
+const local = 'http://localhost:3000';
+var socket = io.connect(local);
 
 socket.on('connect', function () {
     console.log("Connection to the server is successfull!");
@@ -25,7 +27,7 @@ async function getAllVoices() {
     );
 
     console.log('Request sent, waiting 4 result ...');
-    const response = await fetch("https://voicy-speaker.herokuapp.com/voices");
+    const response = await fetch(local + "/voices");
     const data = await response.json();
     $('#messages').text('Recent messages:');
     console.log(data);
@@ -34,7 +36,7 @@ async function getAllVoices() {
         $('#messages').append(
             jQuery('<li/>', {
                 id: 'msg' + i,
-                text: `Voice: ${data[i].timeStamp.slice(0, -38)}`
+                text: `Voice: ${data[i].timeStamp}`
             })
         )
         const audioBlob = new Blob([new Uint8Array(data[i].audioBlob[0].data).buffer]);
